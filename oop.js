@@ -37,5 +37,26 @@ userr.getFullName = () => {
   return `my full name is ${userr.firstName} ${user.lastName}`;
 };
 
-console.log(userr.location.getLocation());
-console.log(userr.getFullName());
+// console.log(userr.location.getLocation());
+// console.log(userr.getFullName());
+
+//  3) ByCreate objects with Object.create(baseObject) syntax
+
+//    A. create the main object that we will make copy from later
+let manObj = {
+  discount: true,
+  hasDescount: () => {
+    return `${this.discount ? "You have a discount" : "Dont have a discount"}`; //this key word will be subbed with the object its in.
+  },
+};
+
+console.log(manObj.discount);
+console.log(manObj.hasDescount());
+
+//    B. Create first copy of the main object
+
+let secondObj = Object.create(manObj);
+secondObj.discount = false;
+
+console.log(secondObj.discount);
+console.log(secondObj.hasDescount());
