@@ -50,13 +50,46 @@ let manObj = {
   },
 };
 
-console.log(manObj.discount);
-console.log(manObj.hasDescount());
+// console.log(manObj.discount);
+// console.log(manObj.hasDescount());
 
 //    B. Create first copy of the main object
 
 let secondObj = Object.create(manObj);
 secondObj.discount = false;
 
-console.log(secondObj.discount);
-console.log(secondObj.hasDescount());
+// console.log(secondObj.discount);
+// console.log(secondObj.hasDescount());
+
+//  4) ByCreate objects with Object.assign(target, src1,src2,....) syntax
+//    A. it dose two things:
+// A.1 copy properties and methods from src obj to the target obj
+let src1 = {
+  prop1: "prop1",
+  prop2: "prop2",
+  prop3: "prop3",
+  method1: () => {
+    return "method1";
+  },
+};
+
+let src2 = {
+  prop3: "prop3",
+  prop4: "prop4",
+  prop5: "prop5",
+  method2: () => {
+    return "method2";
+  },
+};
+
+let target = {
+  prop6: "prop6",
+};
+
+Object.assign(target, src1, src2);
+console.log(target);
+
+// A.2 Can create new obj and copy props and methods from src by passing an empty obj as a target.
+
+let target2 = Object.assign({}, target, { prop7: "prop7" }); // we can add new obj as a src object as well.
+console.log(target2);
