@@ -17,6 +17,25 @@ let user = {
   },
 };
 
-console.log(user.firstName);
-console.log(user.getFullName());
-console.log(user.location.mainLocation());
+// console.log(user["firstName"]);
+// console.log(user.getFullName());
+// console.log(user.location.mainLocation());
+
+// 2)Create objects with new Object() syntax
+
+let userr = new Object();
+
+userr.firstName = "Islam";
+userr.LastName = "Sulaiman";
+userr.age = 27;
+userr.location = {
+  egypt: "cairo",
+  KSA: "khobar",
+};
+userr.location.getLocation = () => `the main city is ${userr.location.egypt}`;
+userr.getFullName = () => {
+  return `my full name is ${userr.firstName} ${user.lastName}`;
+};
+
+console.log(userr.location.getLocation());
+console.log(userr.getFullName());
