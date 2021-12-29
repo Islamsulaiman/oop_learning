@@ -56,3 +56,37 @@
 // // console.log(u2.name);
 // // u2.newName("rahma");
 // // console.log(u2.name);
+
+// pets and humans example.
+
+function Owner(fname, lname, age, pet) {
+  this.fname = fname;
+  this.lname = lname;
+  this.age = age;
+  this.pet = pet;
+  this.petName = function () {
+    if (this.age >= 20) {
+      return this.pet.type;
+    } else {
+      return `${this.fname} cant have a pet due to age restrictions.`;
+    }
+  };
+}
+console.log(Owner.prototype);
+
+// function Pet(type, age) {
+//   this.type = type;
+//   this.age = age;
+// }
+
+// var p1 = new Pet("labrador", 2);
+// var p2 = new Pet("german shepard", 5);
+// var p3 = new Pet("cat", 9);
+
+// let o1 = new Owner("islam", "sulaiman", 27, p1);
+// let o2 = new Owner("sara", "mostafa", 24, p2);
+// let o3 = new Owner("rahma", "abohashim", 19, p3);
+
+// console.log(o1.petName());
+// console.log(o2.petName());
+// console.log(o3.petName());
