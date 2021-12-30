@@ -59,20 +59,28 @@
 
 // pets and humans example.
 
-function Owner(fname, lname, age, pet) {
-  this.fname = fname;
-  this.lname = lname;
-  this.age = age;
-  this.pet = pet;
-  this.petName = function () {
-    if (this.age >= 20) {
-      return this.pet.type;
-    } else {
-      return `${this.fname} cant have a pet due to age restrictions.`;
-    }
-  };
-}
-console.log(Owner.prototype);
+// function Owner(fname, lname, age, pet) {
+//   this.fname = fname;
+//   this.lname = lname;
+//   this.age = age;
+//   this.pet = pet;
+//   this.petName = function () {
+//     if (this.age >= 20) {
+//       return this.pet.type;
+//     } else {
+//       return `${this.fname} cant have a pet due to age restrictions.`;
+//     }
+//   };
+// }
+
+// let o1 = new Owner("islam", "sulaiamn", 27, "dog");
+// Owner.prototype.go = function () {
+//   let de = this;
+//   return `hello ${de}`;
+// };
+// console.log(o1.go());
+
+// console.log(Owner.prototype);
 
 // function Pet(type, age) {
 //   this.type = type;
