@@ -33,3 +33,19 @@ console.log(u1.fullName());
 console.log(u1.changeName("sara"));
 console.log(u1.fullName());
 console.log(User.numOfInstances());
+
+// inherit User to admin class
+console.log("This is admin class");
+
+class Admin extends User {
+  // extend to inherit properties and methods from parent class
+  constructor(fname, lname, age) {
+    super(fname, lname, age); // to copy the assignment lines from parent class to not assign again.
+  }
+  admin() {
+    return `This is the new admin: ${this.name}`;
+  }
+}
+let a1 = new Admin("islam", "admin looma", 26);
+console.log(a1.fullName());
+console.log(Admin.numOfInstances()); //this will print the instances no. of the User -parent-
