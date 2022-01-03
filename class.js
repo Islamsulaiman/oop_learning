@@ -1,51 +1,95 @@
 //  the Es6 syntax of creating classes and constructors.
 
 // User class with some properties.
-class User {
-  static instances = 0; // static will create this function only for the constructor User
-  constructor(fname, lname, age) {
-    this.fname = fname;
-    this.lname = lname;
-    this.age = age;
-    User.instances++;
+// class User {
+//   static instances = 0; // static will create this function only for the constructor User
+//   constructor(fname, lname, age) {
+//     this.fname = fname;
+//     this.lname = lname;
+//     this.age = age;
+//     User.instances++;
+//   }
+//   fullName() {
+//     return `My full name is: ${this.fname} ${this.lname}`;
+//   }
+//   changeName(newFname) {
+//     this.fname = newFname;
+//     return this.fname;
+//   }
+//   static numOfInstances() {
+//     // static will create this function only for the constructor User
+//     return `This is the num of instances: ${User.instances}`;
+//   }
+// }
+
+// let u1 = new User("islam", "sulaiman", 26);
+// let u2 = new User("sara", "sulaiman", 26);
+// let u3 = new User("sara", "sulaiman", 26);
+// let u4 = new User("sara", "sulaiman", 26);
+// let u5 = new User("sara", "sulaiman", 26);
+// let u6 = new User("sara", "sulaiman", 26);
+
+// console.log(u1.fullName());
+// console.log(u1.changeName("sara"));
+// console.log(u1.fullName());
+// console.log(User.numOfInstances());
+
+// // inherit User to admin class
+// console.log("This is admin class");
+
+// class Admin extends User {
+//   // extend to inherit properties and methods from parent class
+//   constructor(fname, lname, age) {
+//     super(fname, lname, age); // to copy the assignment lines from parent class to not assign again.
+//   }
+//   admin() {
+//     return `This is the new admin: ${this.name}`;
+//   }
+// }
+// let a1 = new Admin("islam", "admin looma", 26);
+// console.log(a1.fullName());
+// console.log(Admin.numOfInstances()); //this will print the instances no. of the User -parent-
+
+class Car {
+  static instances = 0;
+  constructor(brand, color, year) {
+    this.brand = brand;
+    this.color = color;
+    this.year = year;
+    Car.instances++;
   }
-  fullName() {
-    return `My full name is: ${this.fname} ${this.lname}`;
+  hunk() {
+    return `Huunk Huunk`;
   }
-  changeName(newFname) {
-    this.fname = newFname;
-    return this.fname;
+  changeColor(newColor) {
+    this.color = newColor;
+    return 1;
   }
-  static numOfInstances() {
-    // static will create this function only for the constructor User
-    return `This is the num of instances: ${User.instances}`;
+  who() {
+    return `this car is the ${this.brand}and it's from ${this.year}`;
+  }
+  static instancesNo = () => `${Car.instances}`;
+}
+
+let c1 = new Car("toyota", "red", 1999);
+let c2 = new Car("hynday", "black", 1998);
+let c3 = new Car("cheve", "blue", 2000);
+
+console.log(c1.color);
+console.log(c1.changeColor("yellow"));
+console.log(c1.color);
+console.log(Car.instancesNo());
+console.log(c1.who());
+
+class Motor extends Car {
+  constructor(brand, color, year) {
+    super(brand, color, year);
+  }
+  who() {
+    return `this Motor is the ${this.brand}and it's from ${this.year}`;
   }
 }
 
-let u1 = new User("islam", "sulaiman", 26);
-let u2 = new User("sara", "sulaiman", 26);
-let u3 = new User("sara", "sulaiman", 26);
-let u4 = new User("sara", "sulaiman", 26);
-let u5 = new User("sara", "sulaiman", 26);
-let u6 = new User("sara", "sulaiman", 26);
+let m1 = new Motor("spider", "pink", 2020);
 
-console.log(u1.fullName());
-console.log(u1.changeName("sara"));
-console.log(u1.fullName());
-console.log(User.numOfInstances());
-
-// inherit User to admin class
-console.log("This is admin class");
-
-class Admin extends User {
-  // extend to inherit properties and methods from parent class
-  constructor(fname, lname, age) {
-    super(fname, lname, age); // to copy the assignment lines from parent class to not assign again.
-  }
-  admin() {
-    return `This is the new admin: ${this.name}`;
-  }
-}
-let a1 = new Admin("islam", "admin looma", 26);
-console.log(a1.fullName());
-console.log(Admin.numOfInstances()); //this will print the instances no. of the User -parent-
+console.log(m1.who());
