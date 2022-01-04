@@ -50,46 +50,86 @@
 // console.log(a1.fullName());
 // console.log(Admin.numOfInstances()); //this will print the instances no. of the User -parent-
 
-class Car {
-  static instances = 0;
-  constructor(brand, color, year) {
-    this.brand = brand;
+// class Car {
+//   static instances = 0;
+//   constructor(brand, color, year) {
+//     this.brand = brand;
+//     this.color = color;
+//     this.year = year;
+//     Car.instances++;
+//   }
+//   hunk() {
+//     return `Huunk Huunk`;
+//   }
+//   changeColor(newColor) {
+//     this.color = newColor;
+//     return 1;
+//   }
+//   who() {
+//     return `this car is the ${this.brand}and it's from ${this.year}`;
+//   }
+//   static instancesNo = () => `${Car.instances}`;
+// }
+
+// let c1 = new Car("toyota", "red", 1999);
+// let c2 = new Car("hynday", "black", 1998);
+// let c3 = new Car("cheve", "blue", 2000);
+
+// console.log(c1.color);
+// console.log(c1.changeColor("yellow"));
+// console.log(c1.color);
+// console.log(Car.instancesNo());
+// console.log(c1.who());
+
+// class Motor extends Car {
+//   constructor(brand, color, year) {
+//     super(brand, color, year);
+//   }
+//   who() {
+//     return `this Motor is the ${this.brand}and it's from ${this.year}`;
+//   }
+// }
+
+// let m1 = new Motor("spider", "pink", 2020);
+
+// console.log(m1.who());
+
+class Building {
+  constructor(name, floor, color) {
+    this.name = name;
+    this.floor = floor;
     this.color = color;
-    this.year = year;
-    Car.instances++;
   }
-  hunk() {
-    return `Huunk Huunk`;
+  fire() {
+    return `please evacuate the ${this.name} building`;
   }
-  changeColor(newColor) {
-    this.color = newColor;
-    return 1;
+  info() {
+    return `this is the ${this.name} building, containing ${this.floor} floors, and its ${this.color}!!`;
   }
-  who() {
-    return `this car is the ${this.brand}and it's from ${this.year}`;
+  func() {
+    console.log(`this is the main class`);
   }
-  static instancesNo = () => `${Car.instances}`;
-}
-
-let c1 = new Car("toyota", "red", 1999);
-let c2 = new Car("hynday", "black", 1998);
-let c3 = new Car("cheve", "blue", 2000);
-
-console.log(c1.color);
-console.log(c1.changeColor("yellow"));
-console.log(c1.color);
-console.log(Car.instancesNo());
-console.log(c1.who());
-
-class Motor extends Car {
-  constructor(brand, color, year) {
-    super(brand, color, year);
-  }
-  who() {
-    return `this Motor is the ${this.brand}and it's from ${this.year}`;
+  changeName(newName) {
+    this.name = newName;
   }
 }
 
-let m1 = new Motor("spider", "pink", 2020);
+class School extends Building {
+  constructor(name, floor, color) {
+    super(name, floor, color);
+  }
+  func() {
+    super.func();
+    return `this is the school class`;
+  }
+}
 
-console.log(m1.who());
+let school1 = new School("maadi", 4, "red");
+let school2 = new School("nasr city", 6, "blue");
+
+console.log(school1.func());
+console.log(school1.fire());
+console.log(school1.fire());
+console.log(school1.name);
+school1.changeName("KSA");
+console.log(school1.name);
