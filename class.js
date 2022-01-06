@@ -127,9 +127,14 @@ class School extends Building {
 let school1 = new School("maadi", 4, "red");
 let school2 = new School("nasr city", 6, "blue");
 
-console.log(school1.func());
-console.log(school1.fire());
-console.log(school1.fire());
-console.log(school1.name);
-school1.changeName("KSA");
-console.log(school1.name);
+School.prototype.addedFunc = function () {
+  return `this is the added func, and the color of the school is ${this.color}`;
+};
+
+// console.log(school1.func());
+// console.log(school1.fire());
+// console.log(school1.fire());
+// console.log(school1.name);
+// school1.changeName("KSA");
+// console.log(school1.name);
+console.log(school1.addedFunc());
