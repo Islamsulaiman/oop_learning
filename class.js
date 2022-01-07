@@ -94,42 +94,42 @@
 
 // console.log(m1.who());
 
-class Building {
-  constructor(name, floor, color) {
-    this.name = name;
-    this.floor = floor;
-    this.color = color;
-  }
-  fire() {
-    return `please evacuate the ${this.name} building`;
-  }
-  info() {
-    return `this is the ${this.name} building, containing ${this.floor} floors, and its ${this.color}!!`;
-  }
-  func() {
-    console.log(`this is the main class`);
-  }
-  changeName(newName) {
-    this.name = newName;
-  }
-}
+// class Building {
+//   constructor(name, floor, color) {
+//     this.name = name;
+//     this.floor = floor;
+//     this.color = color;
+//   }
+//   fire() {
+//     return `please evacuate the ${this.name} building`;
+//   }
+//   info() {
+//     return `this is the ${this.name} building, containing ${this.floor} floors, and its ${this.color}!!`;
+//   }
+//   func() {
+//     console.log(`this is the main class`);
+//   }
+//   changeName(newName) {
+//     this.name = newName;
+//   }
+// }
 
-class School extends Building {
-  constructor(name, floor, color) {
-    super(name, floor, color);
-  }
-  func() {
-    super.func();
-    return `this is the school class`;
-  }
-}
+// class School extends Building {
+//   constructor(name, floor, color) {
+//     super(name, floor, color);
+//   }
+//   func() {
+//     super.func();
+//     return `this is the school class`;
+//   }
+// }
 
-let school1 = new School("maadi", 4, "red");
-let school2 = new School("nasr city", 6, "blue");
+// let school1 = new School("maadi", 4, "red");
+// let school2 = new School("nasr city", 6, "blue");
 
-School.prototype.addedFunc = function () {
-  return `this is the added func, and the color of the school is ${this.color}`;
-};
+// School.prototype.addedFunc = function () {
+//   return `this is the added func, and the color of the school is ${this.color}`;
+// };
 
 // console.log(school1.func());
 // console.log(school1.fire());
@@ -137,4 +137,16 @@ School.prototype.addedFunc = function () {
 // console.log(school1.name);
 // school1.changeName("KSA");
 // console.log(school1.name);
-console.log(school1.addedFunc());
+// console.log(school1.addedFunc());
+
+//we can define two classe with the same name
+// class person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
+// class person {
+//   constructor(age) {
+//     this.name = age;
+//   }
+// }
