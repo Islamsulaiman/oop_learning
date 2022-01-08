@@ -150,3 +150,5 @@
 //     this.name = age;
 //   }
 // }
+
+// console.log(person.constructor);
