@@ -41,7 +41,7 @@ Object.defineProperty(obj1, "f", {
   writable: true,
   enumerable: true,
   configurable: false, // this will not allow deleting or changing the descriptors of this prop.
-  value: 6,
+  value: 5,
 });
 
 console.log(obj1);
@@ -56,4 +56,37 @@ for (let obj in obj1) {
   console.log(`${obj} : ${obj1[obj]}`); // this will access the f prop
 }
 
-console.log(obj1);
+// to get the property descriptors for a specified prop.
+console.log(
+  "Props descriptor for obj f : ",
+  Object.getOwnPropertyDescriptor(obj1, "f")
+);
+
+// Get all the keys in any object, even the ones that i cant loop over - with enumerable = false-
+let allKeys = Object.getOwnPropertyNames(obj1);
+console.log(
+  "This is All the keys, even the ones with enumerable = false : ",
+  allKeys
+);
+
+// to get all the key's inside the object that I cal loop over - with enumerable = true-
+let keys = Object.keys(obj1);
+console.log("This is the enumerable object Keys : ", keys);
+
+// define multiple props in one step with their prop descriptors:
+Object.defineProperties(obj1, {
+  j: {
+    writable: true,
+    enumerable: true,
+    configurable: true,
+    value: 6,
+  },
+  z: {
+    writable: true,
+    enumerable: true,
+    configurable: true,
+    value: 7,
+  },
+});
+
+console.log("this is the accessible object :  ", obj1);
